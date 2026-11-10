@@ -7,22 +7,7 @@ Article-style cards for **pending approvals** in DeepSeek Harness. Approval cont
 ## What it looks like
 
 ```text
-┌──────────────────────────────────────────────────────┐
-│ ● 等待审批            [高风险]      查看原文 · 复制  │
-├──────────────────────────────────────────────────────┤
-│ 允许本次操作使用 danger-full-access 权限：           │
-│ 设计 app/BeeSheet GUI 深层补测。                     │
-│                                                      │
-│ 工具 · powershell                                    │
-│ ┌ 执行详情 ─────────────────────── 命令  展开全部 ┐ │
-│ │ 1  Set-Location 'D:\beeofficeV\_ptmp\s4'          │ │
-│ │ 2  Get-Content beeoffice\tab_manager.py ...       │ │
-│ │ 3  Select-String -Path beeoffice\app.py ...       │ │
-│ └──────────────────────────────────────────────────┘ │
-│                                                      │
-│ Enter 允许一次 · Esc 拒绝          [拒绝] [允许一次] │
-└──────────────────────────────────────────────────────┘
-```
+鈹屸攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?鈹?鈼?绛夊緟瀹℃壒            [楂橀闄      鏌ョ湅鍘熸枃 路 澶嶅埗  鈹?鈹溾攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?鈹?鍏佽鏈鎿嶄綔浣跨敤 danger-full-access 鏉冮檺锛?          鈹?鈹?璁捐 app/BeeSheet GUI 娣卞眰琛ユ祴銆?                    鈹?鈹?                                                     鈹?鈹?宸ュ叿 路 powershell                                    鈹?鈹?鈹?鎵ц璇︽儏 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 鍛戒护  灞曞紑鍏ㄩ儴 鈹?鈹?鈹?鈹?1  Set-Location 'D:\beeofficeV\_ptmp\s4'          鈹?鈹?鈹?鈹?2  Get-Content beeoffice\tab_manager.py ...       鈹?鈹?鈹?鈹?3  Select-String -Path beeoffice\app.py ...       鈹?鈹?鈹?鈹斺攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?鈹?鈹?                                                     鈹?鈹?Enter 鍏佽涓€娆?路 Esc 鎷掔粷          [鎷掔粷] [鍏佽涓€娆 鈹?鈹斺攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹?```
 
 ## Features
 
@@ -40,13 +25,21 @@ Article-style cards for **pending approvals** in DeepSeek Harness. Approval cont
 
 ```sh
 dsh plugin --profile desktop add github:TomJerryGit/dsh-approval-format
+# or, for the web profile
+dsh plugin --profile web add github:TomJerryGit/dsh-approval-format
 ```
 
-Or use **Plugins → Install** and point at the repository / package directory.
+After the package is published to npm, the one-step install is:
+
+```sh
+dsh plugin --profile web add dsh-approval-format
+```
+
+Or use **Plugins 鈫?Install** and point at the repository / package directory.
 
 ### From a market
 
-Once this repository is listed in a DSH plugin market, install the listed version from **Plugins → Discover**.
+Once this repository is listed in a DSH plugin market, install the listed version from **Plugins 鈫?Discover**.
 
 ## Compatibility
 
