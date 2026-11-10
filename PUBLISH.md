@@ -50,14 +50,15 @@ Add that URL in **Plugins 鈫?Discover 鈫?Add index source**.
 ## Current local release state
 
 - Repository: <https://github.com/TomJerryGit/dsh-approval-format>
+- npm package: <https://www.npmjs.com/package/dsh-approval-format> (`latest` = `1.1.1`)
 - Market index: <https://tomjerrygit.github.io/dsh-approval-format/index.json>
 - Plugin Hub submission: <https://github.com/dshplugin/dsh-plugin-hub/issues/703>
-- Source commit used by the index: `2370b582dc3d419a368c8b47345de89f7b389b5c`
-- Market index commit: `74f9251125dd4bf3438db4c6c36032a73bc5ac0f`
+- Latest GitHub release: <https://github.com/TomJerryGit/dsh-approval-format/releases/tag/v1.1.1>
+- Market index commit: `158f621c5438f846ad25c37d19eb6820575b04be` (Git source); the index is now generated from the npm source.
 
 The public GitHub repository has the `dsh-plugin` topic and a GitHub Pages market index. The
-community Hub submission is open; the listing is source-installable. To appear in the in-DSH Plugin
-Hub, the package must also be published to npm (`dsh plugin --profile web add <package>`).
+community Hub submission is open; with `dsh-approval-format@1.1.1` on npm, the in-DSH Plugin Hub
+one-step install is available as `dsh plugin --profile web add dsh-approval-format`.
 
 ## What is still needed
 
