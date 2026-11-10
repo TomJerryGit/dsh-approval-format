@@ -21,18 +21,24 @@ Article-style cards for **pending approvals** in DeepSeek Harness. Approval cont
 
 ## Install
 
-### From this repository
-
-```sh
-dsh plugin --profile desktop add github:TomJerryGit/dsh-approval-format
-# or, for the web profile
-dsh plugin --profile web add github:TomJerryGit/dsh-approval-format
-```
-
-After the package is published to npm, the one-step install is:
+One-step install from npm (recommended):
 
 ```sh
 dsh plugin --profile web add dsh-approval-format
+# desktop profile
+dsh plugin --profile desktop add dsh-approval-format
+```
+
+From source:
+
+```sh
+dsh plugin --profile web add github:TomJerryGit/dsh-approval-format
+```
+
+Or use **Plugins 鈫?Discover** with the market index:
+
+```text
+https://tomjerrygit.github.io/dsh-approval-format/index.json
 ```
 
 Or use **Plugins 鈫?Install** and point at the repository / package directory.
