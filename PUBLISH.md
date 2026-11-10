@@ -4,8 +4,9 @@
 
 As of the installed DSH 0.2.2-rc.1 and the public guide, **DSH ships no official plugin index**:
 
-- The plugin-market guide states: 鈥淒SH ships no index source. Select Discover, choose Add index source, and enter the URL of an index file.鈥?- DeepSeek announced on 2026-11-08 that it is **building** an official plugin market and an author support program; the market鈥檚 launch date and a public submission endpoint were not published.
-- Therefore there is currently no central 鈥渙fficial market鈥?URL or API to push this plugin to.
+- The plugin-market guide states: “DSH ships no index source. Select Discover, choose Add index source, and enter the URL of an index file.”
+- DeepSeek announced on 2026-11-08 that it is **building** an official plugin market and an author support program; the market’s launch date and a public submission endpoint were not published.
+- Therefore there is currently no central “official market” URL or API to push this plugin to.
 
 The official announcement and author interest form are referenced from:
 <https://x.com/i/article/2118260976965517312> and
@@ -45,7 +46,7 @@ This writes `site/index.json` and `site/icons/icon.svg`. The included GitHub Pag
 https://OWNER.github.io/dsh-approval-format/index.json
 ```
 
-Add that URL in **Plugins 鈫?Discover 鈫?Add index source**.
+Add that URL in **Plugins → Discover → Add index source**.
 
 ## Current local release state
 
