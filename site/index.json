@@ -1,0 +1,40 @@
+{
+  "format": 1,
+  "title": {
+    "en": "dsh-approval-format",
+    "zh": "审批内容格式化"
+  },
+  "plugins": [
+    {
+      "name": "dsh-approval-format",
+      "title": {
+        "en": "Approval text formatting",
+        "zh": "审批内容格式化"
+      },
+      "description": {
+        "en": "Article-style approval cards with safe Markdown, line-numbered code details, risk badges, copy/raw views, and keyboard decisions.",
+        "zh": "文章式审批卡片：安全 Markdown、带行号代码详情、风险徽标、复制、原文切换与键盘决策。"
+      },
+      "icon": "icons/icon.svg",
+      "author": "hedongwei",
+      "homepage": "https://github.com/hedongwei/dsh-approval-format#readme",
+      "repository": {
+        "url": "https://github.com/hedongwei/dsh-approval-format"
+      },
+      "versions": [
+        {
+          "version": "1.0.0",
+          "publishTimestamp": 1794273366,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/hedongwei/dsh-approval-format",
+            "commit": "9cbfe21408aec0ca6ac605bd6998baea0a36f127"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-rc.2"
+          }
+        }
+      ]
+    }
+  ]
+}
