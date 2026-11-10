@@ -440,6 +440,7 @@ window.__ModuleLoader__.load({
         h('div', { className: 'dshaf-body' },
           h('div', { className: 'dshaf-title' }, rawMode ? h('pre', { style: { margin: 0, whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', fontFamily: 'var(--ds-font-family-code)', fontSize: '12.5px' } }, titleText) : h('div', { className: 'dshaf-md' }, titleBlocks)),
           h('div', { className: 'dshaf-meta' },
+            h('span', { className: 'dshaf-chip' }, t('waiting')),
             h('span', { className: 'dshaf-chip' }, t('tool') + ' 路 ' + String(pending.toolName || 'unknown')),
             h('span', { className: 'dshaf-chip dshaf-risk dshaf-risk-' + risk }, risk === 'high' ? t('riskHigh') : risk === 'medium' ? t('riskMedium') : t('riskLow'))),
           detailText.length > 0
@@ -447,7 +448,8 @@ window.__ModuleLoader__.load({
                 h('div', { className: 'dshaf-code-head' },
                   h('span', null, t('detail')),
                   h('span', { style: { opacity: 0.7 } }, language),
-                  h('button', { type: 'button', className: 'dshaf-text-btn', style: { marginLeft: 'auto', color: 'inherit' }, onClick: () => copyText(detailText) }, copied ? t('copied') : t('copy')),
+                  h('button', { type: 'button', className: 'dshaf-text-btn', style: { marginLeft: 'auto', color: 'inherit' }, 'aria-pressed': rawMode, onClick: () => setRawMode((value) => !value) }, rawMode ? t('formatted') : t('raw')),
+                  h('button', { type: 'button', className: 'dshaf-text-btn', style: { color: 'inherit' }, onClick: () => copyText(detailText) }, copied ? t('copied') : t('copy')),
                   lines.length > 12
                     ? h('button', { type: 'button', className: 'dshaf-text-btn', style: { color: 'inherit' }, 'aria-expanded': expanded, onClick: () => setExpanded((value) => !value) }, expanded ? t('collapse') : t('expand') + ' (' + lines.length + ')')
                     : null),
