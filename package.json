@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Article-style approval cards with safe Markdown, line-numbered code details, risk badges, copy/raw views, and keyboard decisions.",
   "license": "MIT",
-  "author": "hedongwei",
-  "homepage": "https://github.com/hedongwei/dsh-approval-format#readme",
+  "author": "TomJerryGit",
+  "homepage": "https://github.com/TomJerryGit/dsh-approval-format#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hedongwei/dsh-approval-format"
+    "url": "https://github.com/TomJerryGit/dsh-approval-format"
   },
   "keywords": ["dsh-plugin", "deepseek-harness", "approval", "ui", "markdown"],
   "engines": {

@@ -52,9 +52,7 @@ Add that URL in **Plugins → Discover → Add index source**.
 
 - Source commit: `9cbfe21408aec0ca6ac605bd6998baea0a36f127`
 - Market index: `site/index.json`
-- The index currently assumes the repository URL
-  `https://github.com/hedongwei/dsh-approval-format`. Replace the owner/name if the real repository
-  differs, then rerun the generator.
+- Repository: `https://github.com/TomJerryGit/dsh-approval-format`
 
 ## What is still needed
 

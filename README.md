@@ -39,7 +39,7 @@ Article-style cards for **pending approvals** in DeepSeek Harness. Approval cont
 ### From this repository
 
 ```sh
-dsh plugin --profile desktop add github:hedongwei/dsh-approval-format
+dsh plugin --profile desktop add github:TomJerryGit/dsh-approval-format
 ```
 
 Or use **Plugins → Install** and point at the repository / package directory.
