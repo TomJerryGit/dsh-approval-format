@@ -1,0 +1,32 @@
+{
+  "name": "dsh-approval-format",
+  "version": "1.0.0",
+  "description": "Article-style approval cards with safe Markdown, line-numbered code details, risk badges, copy/raw views, and keyboard decisions.",
+  "license": "MIT",
+  "author": "hedongwei",
+  "homepage": "https://github.com/hedongwei/dsh-approval-format#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hedongwei/dsh-approval-format"
+  },
+  "keywords": ["dsh-plugin", "deepseek-harness", "approval", "ui", "markdown"],
+  "engines": {
+    "dsh": ">=0.2.0-rc.2"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "LICENSE"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-approval"]
+    }
+  }
+}
