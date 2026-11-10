@@ -23,12 +23,12 @@
       },
       "versions": [
         {
-          "version": "1.1.0",
-          "publishTimestamp": 1794276538,
+          "version": "1.1.1",
+          "publishTimestamp": 1794276637,
           "source": {
             "type": "git",
             "url": "https://github.com/TomJerryGit/dsh-approval-format",
-            "commit": "2d8c7adc2f499f90bfd7a516e06a1465eb1c8fa4"
+            "commit": "e62943f3e6a2fed9b0c6b94c6f32d3cbe0aa202d"
           },
           "engines": {
             "dsh": ">=0.2.0-rc.2"
