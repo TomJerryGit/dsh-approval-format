@@ -5,24 +5,24 @@ window.__ModuleLoader__.load({
     const h = React.createElement;
 
     const zh = {
-      waiting: '绛夊緟瀹℃壒',
-      reject: '鎷掔粷',
-      allowOnce: '鍏佽涓€娆?,
-      raw: '鏌ョ湅鍘熸枃',
-      formatted: '鏍煎紡鍖栬鍥?,
-      copy: '澶嶅埗',
-      copied: '宸插鍒?,
-      tool: '宸ュ叿',
-      detail: '鎵ц璇︽儏',
-      expand: '灞曞紑鍏ㄩ儴',
-      collapse: '鏀惰捣',
-      riskHigh: '楂橀闄?,
-      riskMedium: '闇€娉ㄦ剰',
-      riskLow: '鏅€?,
-      hint: 'Enter 鍏佽涓€娆?路 Esc 鎷掔粷',
-      command: '鍛戒护',
-      arguments: '鍙傛暟',
-      fallback: '瀹℃壒鍐呭娓叉煋澶辫触锛屽凡鍥為€€涓哄師鏂囥€?,
+      waiting: '等待审批',
+      reject: '拒绝',
+      allowOnce: '允许一次',
+      raw: '查看原文',
+      formatted: '格式化视图',
+      copy: '复制',
+      copied: '已复制',
+      tool: '工具',
+      detail: '执行详情',
+      expand: '展开全部',
+      collapse: '收起',
+      riskHigh: '高风险',
+      riskMedium: '需注意',
+      riskLow: '普通',
+      hint: 'Enter 允许一次 · Esc 拒绝',
+      command: '命令',
+      arguments: '参数',
+      fallback: '审批内容渲染失败，已回退为原文。',
     };
     const en = {
       waiting: 'Waiting for approval',
@@ -39,7 +39,7 @@ window.__ModuleLoader__.load({
       riskHigh: 'High risk',
       riskMedium: 'Review',
       riskLow: 'Normal',
-      hint: 'Enter allow once 路 Esc reject',
+      hint: 'Enter allow once · Esc reject',
       command: 'Command',
       arguments: 'Arguments',
       fallback: 'Approval rendering failed; showing raw content.',
@@ -267,7 +267,7 @@ window.__ModuleLoader__.load({
             items.push({ text: task ? rawItem.slice(task[0].length) : rawItem, checked: task ? task[1].toLowerCase() === 'x' : null });
             cursor += 1;
           }
-          blocks.push(h(ordered ? 'ol' : 'ul', { key: 'l-' + index }, items.map((item, itemIndex) => h('li', { key: itemIndex }, item.checked === null ? null : h('span', { 'aria-hidden': true, style: { display: 'inline-block', width: '13px', color: item.checked ? 'var(--dsw-alias-state-success-primary)' : 'var(--dsw-alias-label-tertiary)' } }, item.checked ? '鈽? : '鈽?), inline(item.text, 'l' + index + '-' + itemIndex)))));
+          blocks.push(h(ordered ? 'ol' : 'ul', { key: 'l-' + index }, items.map((item, itemIndex) => h('li', { key: itemIndex }, item.checked === null ? null : h('span', { 'aria-hidden': true, style: { display: 'inline-block', width: '13px', color: item.checked ? 'var(--dsw-alias-state-success-primary)' : 'var(--dsw-alias-label-tertiary)' } }, item.checked ? '☑' : '☐'), inline(item.text, 'l' + index + '-' + itemIndex)))));
           index += 1;
           continue;
         }
@@ -375,7 +375,7 @@ window.__ModuleLoader__.load({
       const titleBlocks = React.useMemo(() => renderMarkdown(titleText), [titleText]);
       const lines = React.useMemo(() => {
         const all = detailText.replace(/\r\n?/g, '\n').split('\n');
-        return all.length > 2000 ? all.slice(0, 2000).concat(['鈥?(truncated)']) : all;
+        return all.length > 2000 ? all.slice(0, 2000).concat(['… (truncated)']) : all;
       }, [detailText]);
       const shownLines = expanded ? lines : lines.slice(0, 12);
       const language = detail !== null && detail !== undefined && detail.language === 'json' ? 'JSON' : t('command');
@@ -441,7 +441,7 @@ window.__ModuleLoader__.load({
           h('div', { className: 'dshaf-title' }, rawMode ? h('pre', { style: { margin: 0, whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', fontFamily: 'var(--ds-font-family-code)', fontSize: '12.5px' } }, titleText) : h('div', { className: 'dshaf-md' }, titleBlocks)),
           h('div', { className: 'dshaf-meta' },
             h('span', { className: 'dshaf-chip' }, t('waiting')),
-            h('span', { className: 'dshaf-chip' }, t('tool') + ' 路 ' + String(pending.toolName || 'unknown')),
+            h('span', { className: 'dshaf-chip' }, t('tool') + ' · ' + String(pending.toolName || 'unknown')),
             h('span', { className: 'dshaf-chip dshaf-risk dshaf-risk-' + risk }, risk === 'high' ? t('riskHigh') : risk === 'medium' ? t('riskMedium') : t('riskLow'))),
           detailText.length > 0
             ? h('div', { className: 'dshaf-code' },
@@ -474,7 +474,7 @@ window.__ModuleLoader__.load({
       apply(ctx) {
         ctx.effect(() => {
           const style = document.createElement('style');
-          style.dataset.plugin = '@local/dsh-approval-format';
+          style.dataset.plugin = 'dsh-approval-format';
           style.textContent = STYLE;
           document.head.appendChild(style);
           return () => style.remove();
