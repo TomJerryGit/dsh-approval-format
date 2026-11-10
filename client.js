@@ -5,24 +5,24 @@ window.__ModuleLoader__.load({
     const h = React.createElement;
 
     const zh = {
-      waiting: '等待审批',
-      reject: '拒绝',
-      allowOnce: '允许一次',
-      raw: '查看原文',
-      formatted: '格式化视图',
-      copy: '复制',
-      copied: '已复制',
-      tool: '工具',
-      detail: '执行详情',
-      expand: '展开全部',
-      collapse: '收起',
-      riskHigh: '高风险',
-      riskMedium: '需注意',
-      riskLow: '普通',
-      hint: 'Enter 允许一次 · Esc 拒绝',
-      command: '命令',
-      arguments: '参数',
-      fallback: '审批内容渲染失败，已回退为原文。',
+      waiting: '绛夊緟瀹℃壒',
+      reject: '鎷掔粷',
+      allowOnce: '鍏佽涓€娆?,
+      raw: '鏌ョ湅鍘熸枃',
+      formatted: '鏍煎紡鍖栬鍥?,
+      copy: '澶嶅埗',
+      copied: '宸插鍒?,
+      tool: '宸ュ叿',
+      detail: '鎵ц璇︽儏',
+      expand: '灞曞紑鍏ㄩ儴',
+      collapse: '鏀惰捣',
+      riskHigh: '楂橀闄?,
+      riskMedium: '闇€娉ㄦ剰',
+      riskLow: '鏅€?,
+      hint: 'Enter 鍏佽涓€娆?路 Esc 鎷掔粷',
+      command: '鍛戒护',
+      arguments: '鍙傛暟',
+      fallback: '瀹℃壒鍐呭娓叉煋澶辫触锛屽凡鍥為€€涓哄師鏂囥€?,
     };
     const en = {
       waiting: 'Waiting for approval',
@@ -39,7 +39,7 @@ window.__ModuleLoader__.load({
       riskHigh: 'High risk',
       riskMedium: 'Review',
       riskLow: 'Normal',
-      hint: 'Enter allow once · Esc reject',
+      hint: 'Enter allow once 路 Esc reject',
       command: 'Command',
       arguments: 'Arguments',
       fallback: 'Approval rendering failed; showing raw content.',
@@ -54,27 +54,35 @@ window.__ModuleLoader__.load({
       }
       .dshaf-card {
         width: 100%;
-        max-width: var(--dsh-chat-content-width);
+        max-width: min(var(--dsh-chat-content-width), 920px);
         border: 1px solid var(--dsw-alias-state-warn-secondary);
+        border-top: 3px solid var(--dsw-alias-state-warn-primary);
         border-radius: 16px;
         background: var(--dsw-specific-input-major);
         box-shadow: var(--dsw-shadow-lv2);
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        max-height: min(72vh, 560px);
       }
       .dshaf-strip {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 8px;
-        padding: 9px 16px;
+        min-height: 36px;
+        flex: 0 0 auto;
+        padding: 8px 16px;
         background: var(--dsw-alias-state-warn-tertiary);
         color: var(--dsw-alias-state-warn-primary);
         font-size: 13px;
+        font-weight: 500;
         line-height: 18px;
       }
       .dshaf-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex: none; }
       .dshaf-risk {
         border-radius: 999px;
-        padding: 1px 8px;
+        padding: 0 8px;
         font-size: 11px;
         font-weight: 500;
         line-height: 16px;
@@ -96,9 +104,18 @@ window.__ModuleLoader__.load({
         text-underline-offset: 2px;
       }
       .dshaf-text-btn:hover { opacity: 0.8; }
-      .dshaf-body { padding: 12px 16px 0; display: flex; flex-direction: column; gap: 8px; max-height: 420px; overflow-y: auto; }
-      .dshaf-title { color: var(--dsw-alias-label-primary); font-size: 15px; font-weight: 600; line-height: 1.6; }
-      .dshaf-meta { color: var(--dsw-alias-label-tertiary); font-size: 12px; line-height: 18px; }
+      .dshaf-body {
+        padding: 12px 16px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-height: 0;
+        flex: 1 1 auto;
+        overflow-y: auto;
+      }
+      .dshaf-title { color: var(--dsw-alias-label-primary); font-size: 16px; font-weight: 600; line-height: 1.55; }
+      .dshaf-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; color: var(--dsw-alias-label-tertiary); font-size: 12px; line-height: 20px; }
+      .dshaf-chip { display: inline-flex; align-items: center; border: 1px solid var(--dsw-alias-border-l1); border-radius: 999px; padding: 0 8px; line-height: 18px; font-size: 11px; }
       .dshaf-md p { margin: 3px 0; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
       .dshaf-md ul, .dshaf-md ol { margin: 4px 0; padding-left: 20px; line-height: 1.6; }
       .dshaf-md li { margin: 1px 0; overflow-wrap: anywhere; }
@@ -109,14 +126,14 @@ window.__ModuleLoader__.load({
       .dshaf-table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 12.5px; }
       .dshaf-table th, .dshaf-table td { border: 1px solid var(--dsw-alias-border-l1); padding: 5px 8px; text-align: left; vertical-align: top; }
       .dshaf-table th { background: var(--dsw-alias-bg-layer-2); font-weight: 600; }
-      .dshaf-code { border: 1px solid var(--dsw-alias-border-l1); border-radius: 10px; overflow: hidden; background: var(--dsw-alias-bg-layer-2); }
+      .dshaf-code { border: 1px solid var(--dsw-alias-border-l1); border-radius: 10px; overflow: hidden; background: var(--dsw-alias-bg-layer-2); flex: 0 0 auto; }
       .dshaf-code-head { display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-bottom: 1px solid var(--dsw-alias-border-l1); color: var(--dsw-alias-label-tertiary); font-size: 11px; }
-      .dshaf-code-body { max-height: 320px; overflow: auto; padding: 8px 0; }
-      .dshaf-line { display: flex; gap: 10px; font-family: var(--ds-font-family-code); font-size: 12.5px; line-height: 1.65; }
-      .dshaf-line-no { flex: 0 0 28px; text-align: right; padding-right: 8px; color: var(--dsw-alias-label-tertiary); user-select: none; }
-      .dshaf-line code { flex: 1; white-space: pre-wrap; overflow-wrap: anywhere; font-family: inherit; }
+      .dshaf-code-body { max-height: min(300px, 38vh); overflow: auto; padding: 8px 0; }
+      .dshaf-line { display: flex; gap: 10px; min-width: max-content; font-family: var(--ds-font-family-code); font-size: 12.5px; line-height: 1.65; }
+      .dshaf-line-no { flex: 0 0 28px; text-align: right; padding-right: 8px; color: var(--dsw-alias-label-tertiary); user-select: none; position: sticky; left: 0; background: var(--dsw-alias-bg-layer-2); z-index: 1; }
+      .dshaf-line code { flex: 1; white-space: pre; overflow-wrap: normal; font-family: inherit; }
       .dshaf-empty-code { padding: 10px 12px; color: var(--dsw-alias-label-tertiary); font-size: 12px; }
-      .dshaf-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; padding: 12px 16px; flex-wrap: wrap; }
+      .dshaf-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; padding: 10px 16px; flex: 0 0 auto; flex-wrap: wrap; border-top: 1px solid var(--dsw-alias-border-l1); }
       .dshaf-hint { margin-right: auto; color: var(--dsw-alias-label-tertiary); font-size: 11px; }
       .dshaf-btn {
         border: 1px solid var(--dsw-alias-border-l1);
@@ -250,7 +267,7 @@ window.__ModuleLoader__.load({
             items.push({ text: task ? rawItem.slice(task[0].length) : rawItem, checked: task ? task[1].toLowerCase() === 'x' : null });
             cursor += 1;
           }
-          blocks.push(h(ordered ? 'ol' : 'ul', { key: 'l-' + index }, items.map((item, itemIndex) => h('li', { key: itemIndex }, item.checked === null ? null : h('span', { 'aria-hidden': true, style: { display: 'inline-block', width: '13px', color: item.checked ? 'var(--dsw-alias-state-success-primary)' : 'var(--dsw-alias-label-tertiary)' } }, item.checked ? '☑' : '☐'), inline(item.text, 'l' + index + '-' + itemIndex)))));
+          blocks.push(h(ordered ? 'ol' : 'ul', { key: 'l-' + index }, items.map((item, itemIndex) => h('li', { key: itemIndex }, item.checked === null ? null : h('span', { 'aria-hidden': true, style: { display: 'inline-block', width: '13px', color: item.checked ? 'var(--dsw-alias-state-success-primary)' : 'var(--dsw-alias-label-tertiary)' } }, item.checked ? '鈽? : '鈽?), inline(item.text, 'l' + index + '-' + itemIndex)))));
           index += 1;
           continue;
         }
@@ -358,7 +375,7 @@ window.__ModuleLoader__.load({
       const titleBlocks = React.useMemo(() => renderMarkdown(titleText), [titleText]);
       const lines = React.useMemo(() => {
         const all = detailText.replace(/\r\n?/g, '\n').split('\n');
-        return all.length > 2000 ? all.slice(0, 2000).concat(['… (truncated)']) : all;
+        return all.length > 2000 ? all.slice(0, 2000).concat(['鈥?(truncated)']) : all;
       }, [detailText]);
       const shownLines = expanded ? lines : lines.slice(0, 12);
       const language = detail !== null && detail !== undefined && detail.language === 'json' ? 'JSON' : t('command');
@@ -422,14 +439,17 @@ window.__ModuleLoader__.load({
             h('button', { type: 'button', className: 'dshaf-text-btn', onClick: () => copyText(rawMode ? titleText + '\n\n' + detailText : titleText + '\n\n' + detailText) }, copied ? t('copied') : t('copy')))),
         h('div', { className: 'dshaf-body' },
           h('div', { className: 'dshaf-title' }, rawMode ? h('pre', { style: { margin: 0, whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', fontFamily: 'var(--ds-font-family-code)', fontSize: '12.5px' } }, titleText) : h('div', { className: 'dshaf-md' }, titleBlocks)),
-          h('div', { className: 'dshaf-meta' }, t('tool') + ' · ' + String(pending.toolName || 'unknown')),
+          h('div', { className: 'dshaf-meta' },
+            h('span', { className: 'dshaf-chip' }, t('tool') + ' 路 ' + String(pending.toolName || 'unknown')),
+            h('span', { className: 'dshaf-chip dshaf-risk dshaf-risk-' + risk }, risk === 'high' ? t('riskHigh') : risk === 'medium' ? t('riskMedium') : t('riskLow'))),
           detailText.length > 0
             ? h('div', { className: 'dshaf-code' },
                 h('div', { className: 'dshaf-code-head' },
                   h('span', null, t('detail')),
                   h('span', { style: { opacity: 0.7 } }, language),
+                  h('button', { type: 'button', className: 'dshaf-text-btn', style: { marginLeft: 'auto', color: 'inherit' }, onClick: () => copyText(detailText) }, copied ? t('copied') : t('copy')),
                   lines.length > 12
-                    ? h('button', { type: 'button', className: 'dshaf-text-btn', style: { marginLeft: 'auto', color: 'inherit' }, 'aria-expanded': expanded, onClick: () => setExpanded((value) => !value) }, expanded ? t('collapse') : t('expand') + ' (' + lines.length + ')')
+                    ? h('button', { type: 'button', className: 'dshaf-text-btn', style: { color: 'inherit' }, 'aria-expanded': expanded, onClick: () => setExpanded((value) => !value) }, expanded ? t('collapse') : t('expand') + ' (' + lines.length + ')')
                     : null),
                 h('div', { className: 'dshaf-code-body' }, shownLines.map((line, index) =>
                   h('div', { className: 'dshaf-line', key: index },
