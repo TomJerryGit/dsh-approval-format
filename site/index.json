@@ -16,19 +16,19 @@
         "zh": "文章式审批卡片：安全 Markdown、带行号代码详情、风险徽标、复制、原文切换与键盘决策。"
       },
       "icon": "icons/icon.svg",
-      "author": "hedongwei",
-      "homepage": "https://github.com/hedongwei/dsh-approval-format#readme",
+      "author": "TomJerryGit",
+      "homepage": "https://github.com/TomJerryGit/dsh-approval-format#readme",
       "repository": {
-        "url": "https://github.com/hedongwei/dsh-approval-format"
+        "url": "https://github.com/TomJerryGit/dsh-approval-format"
       },
       "versions": [
         {
           "version": "1.0.0",
-          "publishTimestamp": 1794273366,
+          "publishTimestamp": 1794274296,
           "source": {
             "type": "git",
-            "url": "https://github.com/hedongwei/dsh-approval-format",
-            "commit": "9cbfe21408aec0ca6ac605bd6998baea0a36f127"
+            "url": "https://github.com/TomJerryGit/dsh-approval-format",
+            "commit": "2370b582dc3d419a368c8b47345de89f7b389b5c"
           },
           "engines": {
             "dsh": ">=0.2.0-rc.2"
