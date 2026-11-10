@@ -1,6 +1,6 @@
 {
   "name": "dsh-approval-format",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Article-style approval cards with safe Markdown, line-numbered code details, risk badges, copy/raw views, and keyboard decisions.",
   "license": "MIT",
   "author": "TomJerryGit",
