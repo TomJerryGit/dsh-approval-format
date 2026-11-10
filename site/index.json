@@ -2,18 +2,18 @@
   "format": 1,
   "title": {
     "en": "dsh-approval-format",
-    "zh": "审批内容格式化"
+    "zh": "瀹℃壒鍐呭鏍煎紡鍖?
   },
   "plugins": [
     {
       "name": "dsh-approval-format",
       "title": {
         "en": "Approval text formatting",
-        "zh": "审批内容格式化"
+        "zh": "瀹℃壒鍐呭鏍煎紡鍖?
       },
       "description": {
         "en": "Article-style approval cards with safe Markdown, line-numbered code details, risk badges, copy/raw views, and keyboard decisions.",
-        "zh": "文章式审批卡片：安全 Markdown、带行号代码详情、风险徽标、复制、原文切换与键盘决策。"
+        "zh": "鏂囩珷寮忓鎵瑰崱鐗囷細瀹夊叏 Markdown銆佸甫琛屽彿浠ｇ爜璇︽儏銆侀闄╁窘鏍囥€佸鍒躲€佸師鏂囧垏鎹笌閿洏鍐崇瓥銆?
       },
       "icon": "icons/icon.svg",
       "author": "TomJerryGit",
@@ -23,12 +23,12 @@
       },
       "versions": [
         {
-          "version": "1.0.0",
-          "publishTimestamp": 1794274296,
+          "version": "1.1.0",
+          "publishTimestamp": 1794276538,
           "source": {
             "type": "git",
             "url": "https://github.com/TomJerryGit/dsh-approval-format",
-            "commit": "2370b582dc3d419a368c8b47345de89f7b389b5c"
+            "commit": "2d8c7adc2f499f90bfd7a516e06a1465eb1c8fa4"
           },
           "engines": {
             "dsh": ">=0.2.0-rc.2"
